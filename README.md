@@ -1,7 +1,7 @@
 # PCB_AD9833_ADSR_FeatherWing
 ### _An amplitude-controlled version of the original AD9833 Waveform Generator FeatherWing._
 
-![Image of FeatherWing](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/photos/Waveform_Gen_ADSR_close_wide.png)
+![Image of FeatherWing](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/photos/Waveform_Gen_ADSR_close_wide.png)
 
 ## Overview
 The AD9833 ADSR FeatherWing project is a software and hardware extension of previous work done on the AD9833 Waveform Generator FeatherWing. The ADSR project adds output amplitude control to simulate the Attack-Decay-Sustain-Release envelope needed to simulate musical instrument sounds.
@@ -17,16 +17,16 @@ OSH Park shared PCB project: https://oshpark.com/shared_projects/nDZsxzWR
 ## AD5245 Digital Potentiometer for Envelope Control
 Unlike using the Feather's internal DAC as a multiplying DAC by applying a waveform to the DAC's reference voltage input, the digital potentiometer doesn't require a reference bias, eliminating the distortion that happens when the DAC's reference voltage is less than about 1v. The digital potentiometer's internal MOSFET switches are biased differently than a DAC, allowing the AD5245 potentiometer to control voltage values between ground and Vcc.
 
-![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/photos/ADSR_digipot_concept.png)
-![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/photos/DS1Z_QuickPrint12.png)
+![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/photos/ADSR_digipot_concept.png)
+![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/photos/DS1Z_QuickPrint12.png)
 
 The resulting envelope met the original design expectations for distortionless scaling of the waveform's amplitude. The only issue faced was limited I2C data transfer rates during short-duration envelope segments such as shown during the Sustain segment below.
 
-![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/photos/DS1Z_QuickPrint13.png)
+![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/photos/DS1Z_QuickPrint13.png)
 
 The latest version of the envelope segment control algorithm was modified to use a fixed time interval approach rather than a variable time interval based on segment duration. In the newest code, the digital potentiometer updates regularly every 1ms during segment generation, a speed easily accommodated by CircuitPython and the Feather M4 Express.
 
-![FeatherWing Implementation Chart](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/docs/FeatherWing_Impl_Chart.png)
+![FeatherWing Implementation Chart](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/docs/FeatherWing_Impl_Chart.png)
 
 ## Primary Project Objectives
 1)	Generate a smooth ADSR modulated waveform from the AD9833 across the audio spectrum (1Hz to 20KHz).  
@@ -51,4 +51,4 @@ The latest version of the envelope segment control algorithm was modified to use
   * Design a desktop test equipment version with display and selector knob.
   *	Incorporate the knowledge and experience gained in this project into the design of an Arbitrary Waveform Generator FeatherWing.
 
-![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_FeatherWing/blob/master/photos/Waveform_Gen_ADSR_wide.png)
+![Digital Potentiometer Circuit](https://github.com/CedarGroveStudios/PCB_AD9833_ADSR_Featherwing/blob/main/photos/Waveform_Gen_ADSR_wide.png)
