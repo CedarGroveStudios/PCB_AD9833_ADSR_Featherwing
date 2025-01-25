@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name "Waveform_Gen_ADSR-rescue")(type "Legacy")(uri "${KIPRJMOD}/Waveform_Gen_ADSR-rescue.lib")(options "")(descr ""))
+  (version 7)
+  (lib (name "Waveform_Gen_ADSR-rescue")(type "KiCad")(uri "${KIPRJMOD}/Waveform_Gen_ADSR-rescue.kicad_sym")(options "")(descr ""))
 )
